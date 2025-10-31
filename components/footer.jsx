@@ -83,7 +83,7 @@ const Footer = async () => {
 
         {/* Footer Bottom Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center border-t border-[#333] pt-5 text-sm text-gray-600">
-          <p>&copy; 2025 BudgetBuddy. All rights reserved.</p>
+          <p>&copy; 2025 BudgetBuddy Created By Ayush and Abhishek</p>
           <div className="flex gap-5 mt-3 sm:mt-0">
             <a href="#" className="hover:text-[#6c47ff] transition">Privacy Policy</a>
             <a href="#" className="hover:text-[#6c47ff] transition">Terms of Service</a>
