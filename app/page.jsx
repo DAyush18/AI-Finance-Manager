@@ -277,7 +277,7 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Financial Visualizations Section */}
+      {/* Financial Visualizations Section (Below Hero Image) */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-blue-600 mb-4">Financial Visualizations</h2>
@@ -286,21 +286,41 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {[
-              { title: "Compound Interest", desc: "Watch your investments grow exponentially over time." },
-              { title: "Dynamic Budget Analytics", desc: "Interactive budget tracking with live insights and recommendations." },
-              { title: "Loan Calculator", desc: "Plan your loan payments and compare different options." },
-              { title: "Retirement Planning", desc: "Secure your financial future with smart planning tools." }
-            ].map((item, index) => (
-              <Link key={index} href="https://f-inance-gpt.vercel.app/visualizations" target="_blank">
-                <Card className="p-6 rounded-xl shadow-lg border hover:shadow-xl transition cursor-pointer bg-white hover:bg-blue-50">
-                  <CardContent>
-                    <h3 className="text-xl font-semibold mb-2 text-blue-600">{item.title}</h3>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            <Link href="https://f-inance-gpt.vercel.app/visualizations" target="_blank">
+              <Card className="p-6 rounded-xl shadow-lg border hover:shadow-xl transition cursor-pointer">
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2">Compound Interest</h3>
+                  <p className="text-gray-600">Watch your investments grow exponentially over time.</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="https://f-inance-gpt.vercel.app/visualizations" target="_blank">
+              <Card className="p-6 rounded-xl shadow-lg border hover:shadow-xl transition cursor-pointer">
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2">Dynamic Budget Analytics</h3>
+                  <p className="text-gray-600">Interactive budget tracking with live insights and recommendations.</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="https://f-inance-gpt.vercel.app/visualizations" target="_blank">
+              <Card className="p-6 rounded-xl shadow-lg border hover:shadow-xl transition cursor-pointer">
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2">Loan Calculator</h3>
+                  <p className="text-gray-600">Plan your loan payments and compare different options.</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link href="https://f-inance-gpt.vercel.app/visualizations" target="_blank">
+              <Card className="p-6 rounded-xl shadow-lg border hover:shadow-xl transition cursor-pointer">
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2">Retirement Planning</h3>
+                  <p className="text-gray-600">Secure your financial future with smart planning tools.</p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
 
           <Link href="https://f-inance-gpt.vercel.app/visualizations" target="_blank">
@@ -331,10 +351,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Everything you need to manage your finances</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuresData.map((feature, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition">
+              <Card key={index} className="p-6">
                 <CardContent className="space-y-4 pt-4">
                   {feature.icon}
-                  <h3 className="text-xl font-semibold text-blue-600">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
               </Card>
@@ -350,10 +370,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {howItWorksData.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  {step.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">{step.title}</h3>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">{step.icon}</div>
+                <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
@@ -367,7 +385,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonialsData.map((testimonial, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition">
+              <Card key={index} className="p-6">
                 <CardContent className="pt-4">
                   <div className="flex items-center mb-4">
                     <Image
@@ -390,32 +408,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 💬 Chat With AI Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-blue-600 mb-6">Chat with FinanceGPT 💬</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Have questions about your finances? Talk directly with our AI Assistant and get instant insights.
-          </p>
-
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border p-6">
-            <div className="h-80 overflow-y-auto bg-gray-50 rounded-lg p-4 mb-4 text-left text-gray-700">
-              <p className="text-sm text-gray-500 italic text-center mt-24">Start chatting with your AI assistant...</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="Type your message..."
-                className="flex-grow p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-xl">
-                Send
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-blue-600">
         <div className="container mx-auto px-4 text-center">
@@ -434,4 +426,3 @@ export default function Home() {
     </div>
   );
 }
-
